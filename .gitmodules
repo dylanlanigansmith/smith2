@@ -4,3 +4,9 @@
 [submodule "3rdparty/SDL_shadercross"]
 	path = 3rdparty/SDL_shadercross
 	url = https://github.com/libsdl-org/SDL_shadercross.git
+[submodule "3rdparty/SDL_net"]
+	path = 3rdparty/SDL_net
+	url = https://github.com/libsdl-org/SDL_net.git
+[submodule "3rdparty/glm"]
+	path = 3rdparty/glm
+	url = https://github.com/g-truc/glm.git
