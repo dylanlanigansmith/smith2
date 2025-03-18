@@ -4,7 +4,13 @@
             "name": "Mac",
             "includePath": [
                 "${workspaceFolder}/**",
-                "${workspaceFolder}/include"
+                "${workspaceFolder}/include",
+                "${workspaceFolder}/3rdparty/imgui/**",
+                "${workspaceFolder}/3rdparty/imgui",
+                "${workspaceFolder}/3rdparty/imgui/misc/cpp",
+                "${workspaceFolder}/3rdparty/imgui/backends",
+                "${workspaceFolder}/3rdparty/SDL/include/**",
+                 "${workspaceFolder}/3rdparty/SDL/include"
             ],
             "defines": [],
             "macFrameworkPath": [

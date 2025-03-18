@@ -47,7 +47,7 @@ set(INCLUDES
 )
 
 
-fw_file_glob(GLOB_RECURSE SMITH_SRCS "${PROJECT_SOURCE_DIR}/src/*.cpp")
+fw_file_glob(GLOB_RECURSE SMITH_SRCS "${PROJECT_SOURCE_DIR}/src/*.cc")
 set(SRCS "${SRCS}" "${SMITH_SRCS}")
 
 add_executable(${EXECUTABLE_NAME} ${SRCS})
