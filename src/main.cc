@@ -24,7 +24,8 @@ SDL_AppResult SDL_AppInit(void **appstate, int argc, char **argv){
 
     sdl_call<bool>(SDL_ShaderCross_Init());
     sdl_call<bool>(SDLNet_Init());
-   
+    
+    
 
     return SDL_APP_CONTINUE;
 }
@@ -44,6 +45,6 @@ SDL_AppResult SDL_AppEvent(void *appstate, SDL_Event *event){
 }
 SDL_AppResult SDL_AppIterate(void *appstate){
 
-  SDL_Delay(1);
+  SDL_Delay(2);
   return SDL_APP_CONTINUE;
 }
