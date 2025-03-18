@@ -17,9 +17,14 @@ set(CMAKE_BUILD_TYPE RelWithDebInfo CACHE STRING "Build type" FORCE)
 string( REPLACE "-DNDEBUG" "" CMAKE_CXX_FLAGS_RELWITHDEBINFO "${CMAKE_CXX_FLAGS_RELWITHDEBINFO}")
 set(TP_DIR ${PROJECT_SOURCE_DIR}/3rdparty)
 
-
+set(BUILD_SHARED_LIBS OFF)
 set(SDL_STATIC ON)
+
 add_subdirectory(${TP_DIR}/SDL )
+
+set(SDLSHADERCROSS_VENDORED ON)
+set(SDLSHADERCROSS_CLI_STATIC ON)
+add_subdirectory(${TP_DIR}/SDL_shadercross)
 
 set(IMGUI_DIR ${TP_DIR}/imgui)
 set(IMGUI_INCLUDES ${IMGUI_DIR})
@@ -59,4 +64,5 @@ target_compile_definitions(${EXECUTABLE_NAME} PRIVATE ${COMPILE_DEFS})
 target_link_libraries(${EXECUTABLE_NAME} 
 PUBLIC
   SDL3::SDL3
+  SDL3_shadercross::SDL3_shadercross-static
 )
