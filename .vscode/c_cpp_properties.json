@@ -10,7 +10,10 @@
                 "${workspaceFolder}/3rdparty/imgui/misc/cpp",
                 "${workspaceFolder}/3rdparty/imgui/backends",
                 "${workspaceFolder}/3rdparty/SDL/include/**",
-                 "${workspaceFolder}/3rdparty/SDL/include"
+                "${workspaceFolder}/3rdparty/SDL/include",
+                "${workspaceFolder}/3rdparty/SDL_net/include",
+                "${workspaceFolder}/3rdparty/SDL_shadercross/include",
+                "${workspaceFolder}/3rdparty/glm/glm"
             ],
             "defines": [],
             "macFrameworkPath": [

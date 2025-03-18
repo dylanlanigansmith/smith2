@@ -17,6 +17,8 @@ set(CMAKE_BUILD_TYPE RelWithDebInfo CACHE STRING "Build type" FORCE)
 string( REPLACE "-DNDEBUG" "" CMAKE_CXX_FLAGS_RELWITHDEBINFO "${CMAKE_CXX_FLAGS_RELWITHDEBINFO}")
 set(TP_DIR ${PROJECT_SOURCE_DIR}/3rdparty)
 
+
+#SDL3, shadercross, net
 set(BUILD_SHARED_LIBS OFF)
 set(SDL_STATIC ON)
 
@@ -26,6 +28,12 @@ set(SDLSHADERCROSS_VENDORED ON)
 set(SDLSHADERCROSS_CLI_STATIC ON)
 add_subdirectory(${TP_DIR}/SDL_shadercross)
 
+set(SDLNET_BUILD_SHARED_LIBS OFF)
+add_subdirectory(${TP_DIR}/SDL_net)
+
+
+
+#imgui 
 set(IMGUI_DIR ${TP_DIR}/imgui)
 set(IMGUI_INCLUDES ${IMGUI_DIR})
 set(IMGUI_SRCS 
@@ -37,12 +45,14 @@ set(IMGUI_SRCS
     ${IMGUI_DIR}/misc/cpp/imgui_stdlib.cpp
     ${IMGUI_DIR}/backends/imgui_impl_sdl3.cpp 
     ${IMGUI_DIR}/backends/imgui_impl_sdlgpu3.cpp  
-    # ${IMGUI_DIR}/backends/imgui_impl_sdlrenderer3.cpp 
-    # ${IMGUI_DIR}/backends/imgui_impl_opengl3.cpp
     # ${IMGUI_DIR}/misc/freetype/imgui_freetype.cpp
 )
 set(SRCS "${SRCS}" "${IMGUI_SRCS}")
 set(INCLUDES "${INCLUDES}" "${IMGUI_INCLUDES}" )
+
+
+#glm
+add_subdirectory(${TP_DIR}/glm)
 
 set(COMPILE_DEFS "")
 
@@ -65,4 +75,6 @@ target_link_libraries(${EXECUTABLE_NAME}
 PUBLIC
   SDL3::SDL3
   SDL3_shadercross::SDL3_shadercross-static
+  SDL3_net-static
+  glm::glm
 )
