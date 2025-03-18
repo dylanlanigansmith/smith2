@@ -25,8 +25,7 @@ SDL_AppResult SDL_AppInit(void **appstate, int argc, char **argv){
     sdl_call<bool>(SDL_ShaderCross_Init());
     sdl_call<bool>(SDLNet_Init());
     
-    
-
+    //sick engine goes here
     return SDL_APP_CONTINUE;
 }
 
